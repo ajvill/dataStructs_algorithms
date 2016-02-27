@@ -42,8 +42,8 @@ int main() {
         cin >> numbers[i];
     } 
 
-    long long result1 = MaxPairwiseProduct(numbers);
-    long long result2 = MaxPairwiseProductFast(numbers);
-    cout << result1 << "\n" << result2;
+   // long long result = MaxPairwiseProduct(numbers);
+    long long result = MaxPairwiseProductFast(numbers);
+    cout << result << "\n" ;
     return 0;
 }
