@@ -1,0 +1,14 @@
+## C (gcc 5.2.1)
+gcc -pipe -O2 -std=c11
+
+## C++ (g++ 5.2.1)
+g++ -pipe -O2 -std=c++11
+
+## Java (Open JDK 7)
+javac
+
+## Python2
+python2
+
+## Python3
+python3
