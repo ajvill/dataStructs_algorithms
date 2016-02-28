@@ -29,19 +29,20 @@ long long MaxPairwiseProductFast(const vector<int>& numbers) {
 
   int max_index2 = -1;
   for (int j = 0; j < n; ++j)
-    if ((numbers[j] != numbers[max_index1]) && ((max_index2 == -1) || (numbers[j] > numbers[max_index2])))
+    if ((j != max_index1) && ((max_index2 == -1) || (numbers[j] > numbers[max_index2])))
       max_index2 = j;
-
+  //cout << max_index1 << ' ' << max_index2 << "\n";
   return ((long long)(numbers[max_index1])) * numbers[max_index2];
 }
 
 int main() {
+/*
   while (true) {
-    int n = rand() % 10 + 2;
+    int n = rand() % 9 + 2;
     cout << n << "\n";
     vector<int> a;
     for (int i = 0; i < n; ++i) {
-      a.push_back(rand() % 100000);
+      a.push_back(rand() % 10000);
     }
     for (int i = 0; i < n; ++i) {
       cout << a[i] << ' ';
@@ -57,6 +58,7 @@ int main() {
       cout << "OK\n";
     }
   }
+*/
   int n;
   cin >> n;
   vector<int> numbers(n);
