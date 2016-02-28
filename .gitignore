@@ -14,3 +14,8 @@
 .DS_Store
 .DS_Store?
 ._*
+
+## Ignore files inside directory
+# make sure to add [^.]* in .gitignore in
+# the directories listed below.
+data/
