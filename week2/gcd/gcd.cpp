@@ -44,8 +44,8 @@ int gcd(int a, int b) {
 int main() {
   int a, b;
   std::cin >> a >> b;
-  std::cout << gcd(a, b) << std::endl;
-  std::cout << "\n";
+  //std::cout << gcd(a, b) << std::endl;
+  //std::cout << "\n";
   std::cout << euclidean_gcd(a, b) << std::endl;
   return 0;
 }
