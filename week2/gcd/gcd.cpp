@@ -13,16 +13,16 @@ return EuclideanGCD(b,a')
 int euclidean_gcd(const int a, const int b) {
   int aval = a;
   int bval = b;
-  int prime = 1;
+  int lemma = 1;
 
   if (bval == 0)
     return a;
 
-  for (int d = 2; prime > 0; d++) {
-      prime = aval % bval;
-      if ( prime > 0 ) {
+  for (int d = 2; lemma > 0; d++) {
+      lemma = aval % bval;
+      if ( lemma > 0 ) {
         aval = bval;
-        bval = prime;
+        bval = lemma;
       }
   }
   return bval;
