@@ -1,8 +1,5 @@
 #include <iostream>
-#include <vector>
-//#include <cstdlib>
 
-using std::vector;
 using std::cout;
 using std::cin;
 
@@ -43,6 +40,6 @@ int get_change(int n) {
 
 int main() {
   int n;
-  std::cin >> n;
-  std::cout << get_change(n) << '\n';
+  cin >> n;
+  cout << get_change(n) << '\n';
 }
