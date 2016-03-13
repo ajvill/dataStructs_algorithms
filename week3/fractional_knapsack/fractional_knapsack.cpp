@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -5,14 +6,15 @@
 using std::vector;
 
 double get_optimal_value(int capacity, vector<int> weights, vector<int> values) {
-  double value = 0.0;
   int n = values.size();
   int knapsack_weight = capacity;
   vector<double> maxrank(n);
+  vector<double> A(n);
  
   // Convert individual values and weights to value per weight. 
   for (int j = 0; j < n; j++){
-    maxrank[j] = (double)values[j]/weights[j];  
+    maxrank[j] = (double)values[j]/weights[j];
+    A[j] = 0;
   }
 
   // Going to sort max per unit list but want to also keep track of their index
@@ -26,19 +28,19 @@ double get_optimal_value(int capacity, vector<int> weights, vector<int> values) 
              [&] (int i1, int i2) { return maxrank[i1] > maxrank[i2]; } );
 
   // fill the knapsack here
+  double value = 0.0;
+  double a = 0;
   for (auto v : sorted_index){
     if (knapsack_weight == 0){
        return (double)value; 
-    } else {
-        if ( weights[v] < capacity ) {
-            value += (double)values[v];
-            knapsack_weight -= weights[v];
-        } else {
-            value += ( ((double)capacity/weights[v]) * values[v] );
-            knapsack_weight -= ( ((double)capacity/weights[v]) * weights[v] );
-        }
-    }  
-  }
+    }
+    a = std::min(weights[v] , knapsack_weight);
+    value += (double)a*((double)values[v]/weights[v]);
+    weights[v] -= a;
+    A[v] += a;
+    knapsack_weight -= a;
+  }  
+  
   return value;
 }
 
