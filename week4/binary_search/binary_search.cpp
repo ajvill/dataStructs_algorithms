@@ -8,12 +8,6 @@ using std::vector;
 
 int binary_search(const vector<int> &a, int low, int high, int key) 
 {
-  //std::cout << "low = " << low << ", high =  "<< high <<std::endl;
-/*
-  if ( high < low || key > a[high]) {
-    return (low - 1);
-  }
-*/
   if ( high < low ) {
     return  -1;
   }
@@ -21,15 +15,12 @@ int binary_search(const vector<int> &a, int low, int high, int key)
   int mid = std::floor( low + (high - low)/2);
 
   if (key == a[mid]) {
-    //std::cout << "I'm here, mid = " << mid << std::endl;
     return mid;
   } 
   else if (key < a[mid]) {
-    //std::cout << "I'm here 2, mid = " << mid << std::endl;
     return binary_search(a, low, mid - 1, key);
   }
   else {
-    //std::cout << "I'm here 3, mid = " << mid << std::endl;
     return binary_search(a, mid + 1, high, key);
   }
 } // end of binary_search

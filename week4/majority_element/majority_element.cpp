@@ -38,5 +38,6 @@ int main() {
   }
   left = 0;
   right = a.size() - 1;
+  std::sort(a.begin(), a.end());
   std::cout << (get_majority_element(a, left, right)) << '\n';
 }
